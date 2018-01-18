@@ -80,7 +80,7 @@ def build_update_functions(fieldnames, fields):
                 yield fieldname, replace_from_choices(choices)
 
             elif field and field.get_internal_type() == 'ForeignKey':
-                yield fieldname, replace_pk(field.rel.to)
+                yield fieldname, replace_pk(field.related_model)
 
 
 def update_with_verbose(df, fieldnames, fields):
